@@ -1,0 +1,1 @@
+docker build -t langflow-agent:0.1 .

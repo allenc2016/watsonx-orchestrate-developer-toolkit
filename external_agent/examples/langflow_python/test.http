@@ -1,0 +1,36 @@
+@PORT=8002
+
+POST http://localhost:{{PORT}}/chat/completions HTTP/1.1
+content-type: application/json
+X_IBM_THREAD_ID: 12345
+
+{
+  "model": "any",
+  "messages": [
+    {
+      "role": "user",
+      "content": "3 days in India"
+    }
+  ],
+  "stream": false,
+  "user": "bob@acme.org"
+}
+
+
+###
+
+POST http://localhost:{{PORT}}/chat/completions HTTP/1.1
+content-type: application/json
+X_IBM_THREAD_ID: 12345
+
+{
+  "model": "any",
+  "messages": [
+    {
+      "role": "user",
+      "content": "5 days in New York"
+    }
+  ],
+  "stream": true,
+  "user": "bob@acme.org"
+}

@@ -1,0 +1,5 @@
+# do not copy these files to the docker image
+.env
+build.sh
+run.sh
+test.http

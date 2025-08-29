@@ -1,0 +1,7 @@
+uv
+fastapi
+uvicorn
+python-dotenv
+lfx
+langchain_ibm
+langchain_google_genai
