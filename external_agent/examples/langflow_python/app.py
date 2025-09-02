@@ -62,11 +62,17 @@ async def chat_completions(
         return JSONResponse(content=response.dict())
 
 async def _call_agent(request: ChatCompletionRequest) -> str:
-    # request.messages is an array of dictionary, we need to get the last entry in the user message
-    last_message = request.messages[-1]
-    if last_message and last_message.role== 'user':
-        last_user_input = last_message.content
-        agent_response = await run_travel_agent(last_user_input)
+    # request.messages is an array of messages, we need to get the last user message
+    # search all the messages, and find the last message with role == user
+    # search from the back
+    user_message = None
+
+    for message in reversed(request.messages):
+        if message.role == "user":
+            user_message = message.content
+    
+    if user_message is not None:
+        agent_response = await run_travel_agent(user_message)
     else:
         agent_response = 'No user message received'
     return agent_response
