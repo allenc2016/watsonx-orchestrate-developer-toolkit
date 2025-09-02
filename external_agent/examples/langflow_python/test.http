@@ -1,6 +1,7 @@
-@PORT=8002
 
-POST http://localhost:{{PORT}}/chat/completions HTTP/1.1
+@URL=http://localhost:8002
+
+POST {{URL}}/chat/completions HTTP/1.1
 content-type: application/json
 X_IBM_THREAD_ID: 12345
 
@@ -19,7 +20,7 @@ X_IBM_THREAD_ID: 12345
 
 ###
 
-POST http://localhost:{{PORT}}/chat/completions HTTP/1.1
+POST {{URL}}}}/chat/completions HTTP/1.1
 content-type: application/json
 X_IBM_THREAD_ID: 12345
 

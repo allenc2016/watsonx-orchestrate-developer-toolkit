@@ -4,8 +4,13 @@ WORKDIR /app
 
 ENV GEMINI_API_KEY=SET_YOUR_VALUE
 
+RUN python -m venv /app/venv
+ENV PATH="/app/venv/bin:$PATH"
+RUN ls -lasF /app/venv
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+
+RUN /app/venv/bin/pip install uv
+RUN /app/venv/bin/uv pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
