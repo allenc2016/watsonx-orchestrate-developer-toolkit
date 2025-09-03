@@ -82,7 +82,7 @@ It is recommended to implement your own authentication security measures to ensu
 1. **In IBM watsonx orchestrate Web UI:**
    - From the top left hamburger menu, select **Agent Configuration**.
    - Select **Chat** from the left-hand navigation.
-   - Type a question that should route to the new agent, like `Can you tell me news about the Nasdaq today?`
+   - Type a question that should route to the new agent, like `Give me a travel plan for 3 days in India`.
    - The results from the external agent should be streamed to the IBM watsonx Orchestrate chat window
 
 ![alt text](./chat_external_travelplanner.png "Example of a chat to the external travel planner agent from IBM watsonx Orchestrate")
